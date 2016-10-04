@@ -32,7 +32,10 @@
 #endif
 
 #if BITS_32
-    #define lua_pushunsigned(L, n) lua_pushnumber(L, n)
+    // FIXME: this will cause the value to printed as 'g' since our embedded
+    // platform does not support "%g"
+    //#define lua_pushunsigned(L, n) lua_pushnumber(L, n)
+    #define lua_pushunsigned(L, n) lua_pushinteger(L, n)
 #else
     #define lua_pushunsigned(L, n) lua_pushinteger(L, n)
 #endif
