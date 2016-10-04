@@ -888,7 +888,7 @@ const struct luaL_Reg cmds[] = {
 };
 
 int luaopen_create(lua_State *L) {
-    int i;
+    unsigned i;
     /* Manually construct our module table instead of
      * relying on _register or _newlib */
     lua_newtable(L);
@@ -923,7 +923,7 @@ LUALIB_API int luaopen_cmsgpack(lua_State *L) {
 }
 
 LUALIB_API int luaopen_cmsgpack_safe(lua_State *L) {
-    int i;
+    unsigned i;
 
     luaopen_cmsgpack(L);
 
